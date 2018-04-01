@@ -22,3 +22,14 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+GET /api/playlists
+GET /api/playlists/:id
+POST /api/playlists
+PUT /api/playlists/:id
+
+Model:
+title
+genre
+songs
+img_url
