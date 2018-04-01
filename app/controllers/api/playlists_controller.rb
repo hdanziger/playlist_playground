@@ -1,6 +1,6 @@
 class Api::PlaylistsController < ApplicationController
 
-  before_action: :set_playlist, only [:show, :update, :destory]
+  before_action :set_playlist, only: [:show, :update, :destory]
 
   def index
     render json: Playlist.all
@@ -39,7 +39,9 @@ class Api::PlaylistsController < ApplicationController
 
   def set_playlist
     @playlist = Playlist.find_by(id: params[:id])
+  end
 
   def playlist_params
     params.require(:playlist).permit(:title, :genre, :songs, :img_url)
+  end
 end
