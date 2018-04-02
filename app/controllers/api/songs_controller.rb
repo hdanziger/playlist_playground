@@ -3,6 +3,9 @@ class Api::SongsController < ApplicationController
   before_action :set_song, only: [:edit, :show, :update, :destory]
   before_action :set_playlist
 
+  def index
+    render json: Song.all
+
   def create
     song = @playlist.songs.new(song_params)
     if song.save
