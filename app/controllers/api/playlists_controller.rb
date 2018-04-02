@@ -1,6 +1,6 @@
 class Api::PlaylistsController < ApplicationController
 
-  before_action :set_playlist, only: [:show, :update, :destory]
+  before_action :set_playlist, only: [:edit, :show, :update, :destory]
 
   def index
     render json: Playlist.all
@@ -16,7 +16,7 @@ class Api::PlaylistsController < ApplicationController
   end
 
   def show
-    render json: Playlist.find_by(id: params[:id])
+    render json: @playlist
   end
 
   def update
