@@ -5,6 +5,7 @@ class Api::SongsController < ApplicationController
 
   def index
     render json: Song.all
+  end
 
   def create
     song = @playlist.songs.new(song_params)
