@@ -5,7 +5,7 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-Playlist.create( title: 'Todays Top Hits', genre: "pop", img_url: "")
+Playlist.create( title: 'Todays Top Hits', genre: "pop", img_url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjHH0kwvEppyYcMm9YS507r83HDv99yqP82a48A7gw4shNzRoy")
 Playlist.create( title: 'Slow Jams', genre: "rock", img_url: "")
 Song.create( title: "Here comes the sun", artist: "The Beatles", playlist_id: 1)
 Song.create( title: "Sweet Home Alabama", artist: "Lynyrd Skynyrd", playlist_id: 1)
