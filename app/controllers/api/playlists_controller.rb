@@ -38,10 +38,16 @@ class Api::PlaylistsController < ApplicationController
   private
 
   def set_playlist
-    @playlist = Playlist.find_by(id: params[:id])
+    @playlist = Playlist.find(params[:id])
   end
 
   def playlist_params
-    params.require(:playlist).permit(:title, :genre, :img_url, songs_attributes[:id, :title])
+    params.require(:playlist).permit(
+      :id,
+      :title,
+      :genre,
+      :img_url,
+      songs_attributes: [ :id, :title ]
+    )
   end
 end
