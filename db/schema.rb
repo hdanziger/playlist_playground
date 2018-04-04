@@ -12,11 +12,6 @@
 
 ActiveRecord::Schema.define(version: 20180401180302) do
 
-  create_table "playlist_songs", force: :cascade do |t|
-    t.integer "playlist_id"
-    t.integer "song_id"
-  end
-
   create_table "playlists", force: :cascade do |t|
     t.string "title"
     t.string "genre"

@@ -47,7 +47,7 @@ class Api::PlaylistsController < ApplicationController
       :title,
       :genre,
       :img_url,
-      songs_attributes: [ :id, :title ]
+      songs_attributes: [ :id, :title]
     )
   end
 end
