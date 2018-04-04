@@ -30,6 +30,7 @@ ActiveRecord::Schema.define(version: 20180401180302) do
     t.integer "playlist_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["playlist_id"], name: "index_songs_on_playlist_id"
   end
 
 end
