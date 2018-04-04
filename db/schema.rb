@@ -12,10 +12,14 @@
 
 ActiveRecord::Schema.define(version: 20180401180302) do
 
+  create_table "playlist_songs", force: :cascade do |t|
+    t.integer "playlist_id"
+    t.integer "song_id"
+  end
+
   create_table "playlists", force: :cascade do |t|
     t.string "title"
     t.string "genre"
-    t.string "songs"
     t.string "img_url", default: "https://cdn.pixabay.com/photo/2016/04/07/22/09/note-1314941_960_720.png"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -23,7 +27,6 @@ ActiveRecord::Schema.define(version: 20180401180302) do
 
   create_table "songs", force: :cascade do |t|
     t.string "title"
-    t.string "artist"
     t.integer "playlist_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
