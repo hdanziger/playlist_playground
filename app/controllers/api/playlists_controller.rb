@@ -21,11 +21,8 @@ class Api::PlaylistsController < ApplicationController
 
 
   def destroy
-    if @playlist.destroy
-      render status: 204
-    else
-      render json: {message: "unable to remove playlist"}, status: 400
-    end
+    @playlist.destroy
+    head :no_content
   end
 
   private
