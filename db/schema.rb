@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180401180302) do
+ActiveRecord::Schema.define(version: 20180406182526) do
 
   create_table "playlists", force: :cascade do |t|
     t.string "title"
@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(version: 20180401180302) do
     t.string "img_url", default: "https://cdn.pixabay.com/photo/2016/04/07/22/09/note-1314941_960_720.png"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "likes", default: 0
   end
 
   create_table "songs", force: :cascade do |t|

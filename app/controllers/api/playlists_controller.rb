@@ -1,6 +1,6 @@
 class Api::PlaylistsController < ApplicationController
 
-  before_action :set_playlist, only: [ :show, :destroy]
+  before_action :set_playlist, only: [ :show, :update, :destroy]
 
   def index
     render json: Playlist.all
@@ -17,6 +17,14 @@ class Api::PlaylistsController < ApplicationController
 
   def show
     render json: @playlist
+  end
+
+  def update
+    if @playlist.update(playlist_params)
+      render json: @playlist
+    else
+      render json: { message: @playlist.errors }, status: 400
+    end
   end
 
 
@@ -37,6 +45,7 @@ class Api::PlaylistsController < ApplicationController
       :title,
       :genre,
       :img_url,
+      :likes,
       songs_attributes: [ :id, :title]
     )
   end
